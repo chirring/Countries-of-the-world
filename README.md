@@ -36,8 +36,7 @@ index = np.arange(N)
 def formatnum(x, pos):  
     return '$%.1f$x$10^{9}$' % (x/1000000000)  
   
-# def formatnum(x, pos):  
-#     return '$%.1f$x$10^{7}$' % (x/10000000)  
+
   
 fig, ax1 = plt.subplots(1,1,figsize=(10,5))  
 ax2 = ax1.twinx()  
