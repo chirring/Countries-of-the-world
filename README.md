@@ -153,23 +153,23 @@ We can see that
   
 * Asia has the highest population density, followed by Western Europe and the third is the Far East, which seems to be inconsistent with the above comparison of population and area.  
   
-  <font size=4>5.  Population Composition of the World</font>  
-  
-      #Study the relationship between demographic composition, net population growth rate and mobility  
-      df2['Net Growth Rate']=df2['Birthrate']-df2['Deathrate']  
+<font size=4>5.  Population Composition of the World</font>  
 
-      bar_width=0.3  
-      N = len(df1)  
-      index = np.arange(N)  
+    #Study the relationship between demographic composition, net population growth rate and mobility  
+    df2['Net Growth Rate']=df2['Birthrate']-df2['Deathrate']  
 
-      fig, ax = plt.subplots(1,1,figsize=(10,5))  
-      ax.bar(index -  bar_width/2, df2['Net Growth Rate'],bar_width)  
-      ax.bar(index +  bar_width/2, df2['Net migration'],bar_width)  
-      plt.title('Population Composition of the World',pad=30,fontsize=20)  
-      plt.xlabel('Region',labelpad=30,fontsize=15)  
-      plt.ylabel('Rate',labelpad=30,fontsize=15)  
-      plt.xticks(np.arange(N),df2['Net Growth Rate'].index,rotation=90)  
-      ax.legend(('Net Growth Rate','Net migration'))  
+    bar_width=0.3  
+    N = len(df1)  
+    index = np.arange(N)  
+
+    fig, ax = plt.subplots(1,1,figsize=(10,5))  
+    ax.bar(index -  bar_width/2, df2['Net Growth Rate'],bar_width)  
+    ax.bar(index +  bar_width/2, df2['Net migration'],bar_width)  
+    plt.title('Population Composition of the World',pad=30,fontsize=20)  
+    plt.xlabel('Region',labelpad=30,fontsize=15)  
+    plt.ylabel('Rate',labelpad=30,fontsize=15)  
+    plt.xticks(np.arange(N),df2['Net Growth Rate'].index,rotation=90)  
+    ax.legend(('Net Growth Rate','Net migration'))  
   
 ![3](https://github.com/chirring/Countries-of-the-world/blob/master/ResultPic/3Population%20Composition%20of%20the%20Worldpng.png)  
   
