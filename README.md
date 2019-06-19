@@ -1,3 +1,44 @@
+<font size=10>Table of Contents</font>  
+&emsp;&emsp;Part I: Introduction to the dataset  
+&emsp;&emsp;Part II: Asking questions  
+&emsp;&emsp;Part III: Solving the question  
+  
+  
+  
+<font size=8>Part I: Introduction to the dataset  
+&emsp;&emsp;Country  
+&emsp;&emsp;Region  
+&emsp;&emsp;Population  
+&emsp;&emsp;Area (sq. mi.)：Square mile  
+&emsp;&emsp;Pop. Density (per sq. mi.)：Population density (per square mile)  
+&emsp;&emsp;Coastline (coast/area ratio)  
+&emsp;&emsp;Net migration  
+&emsp;&emsp;Infant mortality (per 1000 births)  
+&emsp;&emsp;GDP ($ per capita)  
+&emsp;&emsp;Literacy (%)：Reflecting the rate of education  
+&emsp;&emsp;Phones (per 1000)：the rate of having a mobile phone per 1,000 people  
+&emsp;&emsp;Arable (%)：Arable area accounts for the total area  
+&emsp;&emsp;Crops (%)：Crop area accounts for the total area  
+&emsp;&emsp;Other (%)：other area accounts for the total area  
+&emsp;&emsp;Climate：Climate comfort  
+&emsp;&emsp;Birthrate  
+&emsp;&emsp;Deathrate  
+&emsp;&emsp;Agriculture：The proportion of agriculture in the three major industries  
+&emsp;&emsp;Industry：The proportion of industry in the three major industries  
+&emsp;&emsp;Service：The proportion of service in the three major industries  
+  
+  
+  
+  
+<font size=8>Part II: Asking questions  
+&emsp;&emsp;1.The distribution of population, area, and population density  
+&emsp;&emsp;2.The relationship between population and area, and climate  
+&emsp;&emsp;3.Comparison of population and birth rate, mortality rate, and mobility rate  
+&emsp;&emsp;4.Distribution of population density on the earth  
+&emsp;&emsp;5.Comparison of GDP per capita in each region  
+&emsp;&emsp;6.Comparison of arable area and crop area to total area  
+&emsp;&emsp;7.The composition ratio of agriculture, industry and service industry  
+  
 import numpy as np  
 import pandas as pd  
 import matplotlib.pyplot as plt  
