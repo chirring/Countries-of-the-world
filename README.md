@@ -50,7 +50,8 @@ We want to know
 &emsp;&emsp;6.Comparison of arable area and crop area to total area  
 &emsp;&emsp;7.The composition ratio of agriculture, industry and service industry  
   
-<font size=4>1.  Overview of the data set</font>   
+<font size=4>1.  Overview of the data set</font>  
+  
     import numpy as np  
     import pandas as pd  
     import matplotlib.pyplot as plt  
@@ -130,13 +131,12 @@ We want to know
   
 ![1](https://github.com/chirring/Countries-of-the-world/blob/master/ResultPic/1Population%20and%20Area%20of%20Different%20Region%20of%20the%20world.png)  
   
-  We can see that
+We can see that
 * Asia has the largest area, almost 4, 5 times that of the second largest South America.  
 * Although Asia is large, the population is less than South America.  
 * India, Latin America, and North America have a very small proportion of the population.  
   
-  <font size=4>4.Population density of the world  </font>  
-  
+<font size=4>4.Population density of the world  </font>  
   
     #Based on the above results, continue to study population density  
     plt.subplots(1,1,figsize=(10,5))  
@@ -148,7 +148,7 @@ We want to know
   
 ![2](https://github.com/chirring/Countries-of-the-world/blob/master/ResultPic/2Population%20density%20of%20the%20world.png)  
   
-  * Asia has the highest population density, followed by Western Europe and the third is the Far East, which seems to be inconsistent with the above comparison of population and area.  
+* Asia has the highest population density, followed by Western Europe and the third is the Far East, which seems to be inconsistent with the above comparison of population and area.  
   
   <font size=4>5.  Population Composition of the World</font>  
   
@@ -264,5 +264,5 @@ We can see that
   
 ![7](https://github.com/chirring/Countries-of-the-world/blob/master/ResultPic/7Farming%20situation%20of%20the%20World.png)  
   
-  * It is worth noting that although the arable area in Europe is large, the area of crops is very small and the proportion is seriously inappropriate.  
+* It is worth noting that although the arable area in Europe is large, the area of crops is very small and the proportion is seriously inappropriate.  
   
