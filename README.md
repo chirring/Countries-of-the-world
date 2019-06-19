@@ -1,11 +1,11 @@
-<font size=10>Table of Contents</font>  
+<font size=20>Table of Contents</font>  
 &emsp;&emsp;Part I: Introduction to the dataset  
 &emsp;&emsp;Part II: Asking questions  
 &emsp;&emsp;Part III: Solving the question  
   
   
   
-<font size=8>Part I: Introduction to the dataset  
+<font size=15>Part I: Introduction to the dataset  
 &emsp;&emsp;Country  
 &emsp;&emsp;Region  
 &emsp;&emsp;Population  
@@ -30,7 +30,7 @@
   
   
   
-<font size=8>Part II: Asking questions  
+<font size=15>Part II: Asking questions  
 &emsp;&emsp;1.The distribution of population, area, and population density  
 &emsp;&emsp;2.The relationship between population and area, and climate  
 &emsp;&emsp;3.Comparison of population and birth rate, mortality rate, and mobility rate  
