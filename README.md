@@ -55,7 +55,7 @@
 
     df['Region']=df['Region'].str.strip()  
     for col in df[['Pop. Density (per sq. mi.)','Coastline (coast/area ratio)','Net migration','Infant mortality (per 1000 births)','GDP ($ per capita)','Literacy (%)','Phones (per 1000)','Arable (%)','Crops (%)','Birthrate','Deathrate','Agriculture','Industry','Service']]:  
-    &emsp;df[col]=df[col].astype(str).str.replace(',','.').astype(float)  
+        df[col]=df[col].astype(str).str.replace(',','.').astype(float)  
   
     df.fillna(df.mean())  
   
@@ -75,7 +75,7 @@
     index = np.arange(N)  
   
     def formatnum(x, pos):  
-    &emsp;return '$%.1f$x$10^{9}$' % (x/1000000000)  
+        return '$%.1f$x$10^{9}$' % (x/1000000000)  
   
 
   
