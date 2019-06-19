@@ -1,11 +1,21 @@
-<font size=20>Table of Contents</font>  
+<font size=5>Table of Contents</font>  
 &emsp;&emsp;Part I: Introduction to the dataset  
 &emsp;&emsp;Part II: Asking questions  
 &emsp;&emsp;Part III: Solving the question  
+&emsp;&emsp;&emsp;&emsp;1.Overview of the data set  
+&emsp;&emsp;&emsp;&emsp;2.Handling missing data  
+&emsp;&emsp;&emsp;&emsp;3.Population and Area of Different Region of the world  
+&emsp;&emsp;&emsp;&emsp;4.Population density of the world  
+&emsp;&emsp;&emsp;&emsp;5.Population Composition of the World  
+&emsp;&emsp;&emsp;&emsp;6.Population density distribution  
+&emsp;&emsp;&emsp;&emsp;7.Per capita GDP of the world  
+&emsp;&emsp;&emsp;&emsp;8.Industrial distribution ratio   
+&emsp;&emsp;&emsp;&emsp;9.Farming situation of the World  
+&emsp;&emsp;Part IV: Conclusion  
   
   
-  
-<font size=15>Part I: Introduction to the dataset  
+<font size=4>Part I: Introduction to the dataset</font>  
+The data set contains 20 fields, including：  
 &emsp;&emsp;Country  
 &emsp;&emsp;Region  
 &emsp;&emsp;Population  
@@ -30,7 +40,8 @@
   
   
   
-<font size=15>Part II: Asking questions  
+<font size=4>Part II: Asking questions</font>  
+We want to know  
 &emsp;&emsp;1.The distribution of population, area, and population density  
 &emsp;&emsp;2.The relationship between population and area, and climate  
 &emsp;&emsp;3.Comparison of population and birth rate, mortality rate, and mobility rate  
@@ -39,6 +50,7 @@
 &emsp;&emsp;6.Comparison of arable area and crop area to total area  
 &emsp;&emsp;7.The composition ratio of agriculture, industry and service industry  
   
+<font size=4>1.  Overview of the data set</font>   
     import numpy as np  
     import pandas as pd  
     import matplotlib.pyplot as plt  
@@ -49,35 +61,43 @@
     import matplotlib.pyplot as plt  
 
     df=pd.read_csv('C:/Users/Administrator/Desktop/countries of the world.csv')  
-处理
-    #Remove the useless columns, replace the "," with ".", and fill the missing data with the average  
+
+<font size=4>2.  Handling missing data  </font> 
+    
+    #Remove the useless columns  
     df=df.drop(['Other (%)','Climate'],axis=1)  
 
+
+    #Replace the "," with ".", and fill the missing data with the average
     df['Region']=df['Region'].str.strip()  
     for col in df[['Pop. Density (per sq. mi.)','Coastline (coast/area ratio)','Net migration','Infant mortality (per 1000 births)','GDP ($ per capita)','Literacy (%)','Phones (per 1000)','Arable (%)','Crops (%)','Birthrate','Deathrate','Agriculture','Industry','Service']]:  
         df[col]=df[col].astype(str).str.replace(',','.').astype(float)  
-  
     df.fillna(df.mean())  
   
-    #以'Region'分组，研究'Population','Area (sq. mi.)'，因为它们总和有意义  
+  
+    #Group by'Region', and study 'Population', 'Area (sq. mi.)' because they are summed to be meaningful
     df1=df[['Region','Population','Area (sq. mi.)']]  
     df1=df1.groupby('Region').sum()  
 
-    #以'Region'分组，研究其他列，因为它们平均数有意义  
+
+    #Group by 'Region', and study the other columns because their averages make sense
     df2=df[['Region','Pop. Density (per sq. mi.)','Coastline (coast/area ratio)','Net migration','Infant mortality (per 1000 births)','GDP ($ per capita)','Literacy (%)','Phones (per 1000)','Arable (%)','Crops (%)','Birthrate','Deathrate','Agriculture','Industry','Service']]  
     df2=df2.groupby('Region').mean()  
   
-    #一起研究'Population'和'Area (sq. mi.)'  
   
+
+<font size=4> 3.  Population and Area of Different Region of the world</font>
+  
+    #Set some common parameters for drawing
     N = len(df1)  
     y1 = df1['Population']  
     y2 = df1['Area (sq. mi.)']  
     index = np.arange(N)  
   
+    #study 'Population', 'Area (sq. mi.)'
     def formatnum(x, pos):  
         return '$%.1f$x$10^{9}$' % (x/1000000000)  
   
-
   
     fig, ax1 = plt.subplots(1,1,figsize=(10,5))  
     ax2 = ax1.twinx()  
@@ -108,111 +128,141 @@
   
     plt.show()  
   
-    ![1](https://github.com/chirring/Countries-of-the-world/blob/master/ResultPic/1Population%20and%20Area%20of%20Different%20Region%20of%20the%20world.png)  
+![1](https://github.com/chirring/Countries-of-the-world/blob/master/ResultPic/1Population%20and%20Area%20of%20Different%20Region%20of%20the%20world.png)  
   
-#基于上面的结果，继续研究人口密度  
-plt.subplots(1,1,figsize=(10,5))  
-plt.bar(x=df2['Pop. Density (per sq. mi.)'].index,height=df2['Pop. Density (per sq. mi.)'])  
-plt.title('Population density of the world',pad=30,fontsize=20)  
-plt.xlabel('Region',labelpad=30,fontsize=15)  
-plt.ylabel('Population density(per sq. mi.)',labelpad=30,fontsize=15)  
-plt.xticks(rotation=90)  
+  We can see that
+* Asia has the largest area, almost 4, 5 times that of the second largest South America.  
+* Although Asia is large, the population is less than South America.  
+* India, Latin America, and North America have a very small proportion of the population.  
+  
+  <font size=4>4.Population density of the world  </font>  
+  
+  
+    #Based on the above results, continue to study population density  
+    plt.subplots(1,1,figsize=(10,5))  
+    plt.bar(x=df2['Pop. Density (per sq. mi.)'].index,height=df2['Pop. Density (per sq. mi.)'])  
+    plt.title('Population density of the world',pad=30,fontsize=20)  
+    plt.xlabel('Region',labelpad=30,fontsize=15)  
+    plt.ylabel('Population density(per sq. mi.)',labelpad=30,fontsize=15)  
+    plt.xticks(rotation=90)  
   
 ![2](https://github.com/chirring/Countries-of-the-world/blob/master/ResultPic/2Population%20density%20of%20the%20world.png)  
   
-#人口组成成分，人口净增长率和迁移率的关系  
-df2['Net Growth Rate']=df2['Birthrate']-df2['Deathrate']  
+  * Asia has the highest population density, followed by Western Europe and the third is the Far East, which seems to be inconsistent with the above comparison of population and area.  
   
-bar_width=0.3  
-N = len(df1)  
-index = np.arange(N)  
+  <font size=4>5.  Population Composition of the World</font>  
   
-fig, ax = plt.subplots(1,1,figsize=(10,5))  
-ax.bar(index -  bar_width/2, df2['Net Growth Rate'],bar_width)  
-ax.bar(index +  bar_width/2, df2['Net migration'],bar_width)  
-plt.title('Population Composition of the World',pad=30,fontsize=20)  
-plt.xlabel('Region',labelpad=30,fontsize=15)  
-plt.ylabel('Rate',labelpad=30,fontsize=15)  
-plt.xticks(np.arange(N),df2['Net Growth Rate'].index,rotation=90)  
-ax.legend(('Net Growth Rate','Net migration'))  
+    #Study the relationship between demographic composition, net population growth rate and mobility  
+    df2['Net Growth Rate']=df2['Birthrate']-df2['Deathrate']  
+
+    bar_width=0.3  
+    N = len(df1)  
+    index = np.arange(N)  
+
+    fig, ax = plt.subplots(1,1,figsize=(10,5))  
+    ax.bar(index -  bar_width/2, df2['Net Growth Rate'],bar_width)  
+    ax.bar(index +  bar_width/2, df2['Net migration'],bar_width)  
+    plt.title('Population Composition of the World',pad=30,fontsize=20)  
+    plt.xlabel('Region',labelpad=30,fontsize=15)  
+    plt.ylabel('Rate',labelpad=30,fontsize=15)  
+    plt.xticks(np.arange(N),df2['Net Growth Rate'].index,rotation=90)  
+    ax.legend(('Net Growth Rate','Net migration'))  
   
 ![3](https://github.com/chirring/Countries-of-the-world/blob/master/ResultPic/3Population%20Composition%20of%20the%20Worldpng.png)  
   
-  
-#在地图上显示人口密度分布图  
-  
-fig=plt.figure(figsize=(15,15))  
-  
-map = Basemap(projection='mill',lon_0=180)  
-  
-map.drawcoastlines()  
-map.drawcountries()  
-map.drawparallels(np.arange(-90,90,30),labels=[1,0,0,0])  
-map.drawmeridians(np.arange(map.lonmin,map.lonmax+30,60),labels=[1,0,0,0])  
-#map.drawmapboundary(fill_color='aqua')  
-#map.fillcontinents(color='coral',lake_color='aqua')  
+The results of this picture are thought-provoking  
+* The net growth rate of Africa, America and Australia is high, but the population has an outflow trend.  
+* The population situation in Europe is very serious. The population of the Baltic Sea is seriously negatively growing and outflowing.Although Western Europe has a small net growth rate, the migration population is more than the birth population, because of the refugee policy. And the population change in Eastern Europe also tends to be outflowing, and there are no newborn babies.  
+* Although India is large, the situation of population outflow is also very serious, and people cannot be retained.  
+* The development of Asia is relatively stable, with a considerable population born, and a small number of people moving in.   
   
   
-#lons=dict({'ASIA (EX. NEAR EAST)':22.,'C.W. OF IND. STATES':21.,'NEAR EAST':31.,'NORTHERN AMERICA':47., 'LATIN AMER. & CARIB':-1.,'OCEANIA':-23.,'NORTHERN AFRICA':23.,'SUB-SAHARAN AFRICA':-8.,'EASTERN EUROPE':63.,'WESTERN EUROPE':50.,'BALTICS':58.})  
-#lats=dict({'ASIA (EX. NEAR EAST)':55.,'C.W. OF IND. STATES':21.,'NEAR EAST':114.,'NORTHERN AMERICA':-76.,'LATIN AMER. & CARIB':-116.,'OCEANIA':134.,'NORTHERN AFRICA':11.,'SUB-SAHARAN AFRICA':26.,'EASTERN EUROPE':88.,'WESTERN EUROPE':14.,'BALTICS':20.})  
-  
-#要显示的散点的经纬度  
-lats=np.array([31.,70.,45.,47.,-10.,-23.,20.,-10.,60.,45.,60.])  
-lons=np.array([114.,20.,50.,255.,290.,134.,20.,26.,110.,14.,30.])  
-  
-#要显示的散点的经纬度  
-size=df2['Pop. Density (per sq. mi.)']/df2['Pop. Density (per sq. mi.)'].max()  
-size=size.values  
-  
-x, y = map(lons,lats)  
-map.scatter(x,y,s=size*500,marker='o',color='g')  
-  
-plt.title('Population density distribution',fontsize=30)  
-plt.show()  
-  
+<font size=4>6.Population density distribution</font>   
+
+    #Display population density on the map
+    fig=plt.figure(figsize=(15,15))  
+
+    map = Basemap(projection='mill',lon_0=180)  
+
+    map.drawcoastlines()  
+    map.drawcountries()  
+    map.drawparallels(np.arange(-90,90,30),labels=[1,0,0,0])  
+    map.drawmeridians(np.arange(map.lonmin,map.lonmax+30,60),labels=[1,0,0,0])  
+    #map.drawmapboundary(fill_color='aqua')  
+    #map.fillcontinents(color='coral',lake_color='aqua')  
+
+
+    #The latitude and longitude of the scatter  
+    lats=np.array([31.,70.,45.,47.,-10.,-23.,20.,-10.,60.,45.,60.])  
+    lons=np.array([114.,20.,50.,255.,290.,134.,20.,26.,110.,14.,30.])  
+
+    size=df2['Pop. Density (per sq. mi.)']/df2['Pop. Density (per sq. mi.)'].max()  
+    size=size.values  
+
+    x, y = map(lons,lats)  
+    map.scatter(x,y,s=size*500,marker='o',color='g')  
+
+    plt.title('Population density distribution',fontsize=30)  
+    plt.show()  
+
 ![4](https://github.com/chirring/Countries-of-the-world/blob/master/ResultPic/4Population%20density%20distribution.png)  
   
-#人均GDP对比  
-plt.subplots(1,1,figsize=(10,5))  
-plt.bar(x=df2['GDP ($ per capita)'].index,height=df2['GDP ($ per capita)'],width = 0.5)  
-plt.title('Per capita GDP of the world',pad=20,fontsize=20)  
-plt.xlabel('Region',labelpad=30,fontsize=15)  
-plt.ylabel('GDP ($ per capita)',labelpad=30,fontsize=15)  
-plt.xticks(rotation=90)  
-plt.show()  
+<font size=4>7.  Per capita GDP of the world</font>  
+
+    plt.subplots(1,1,figsize=(10,5))  
+    plt.bar(x=df2['GDP ($ per capita)'].index,height=df2['GDP ($ per capita)'],width = 0.5)  
+    plt.title('Per capita GDP of the world',pad=20,fontsize=20)  
+    plt.xlabel('Region',labelpad=30,fontsize=15)  
+    plt.ylabel('GDP ($ per capita)',labelpad=30,fontsize=15)  
+    plt.xticks(rotation=90)  
+    plt.show()  
 
 ![5](https://github.com/chirring/Countries-of-the-world/blob/master/ResultPic/5Per%20capita%20GDP%20of%20the%20world.png)  
-  
-#产业分布比例  
-plt.subplots(1,1,figsize=(10,10))  
-ind = df2.index  
-width=0.5  
-p1 = plt.barh(ind, df2['Agriculture'] ,width)  
-p2 = plt.barh(ind, df2['Industry'],width,left=df2['Agriculture'])  
-p3 = plt.barh(ind, df2['Service'],width,left=df2['Industry'])  
 
-plt.title('Scores by group and gender',pad=20,fontsize=25)  
-plt.ylabel('Region',labelpad=30,fontsize=20)  
-#plt.yticks(rotation=90)  
-plt.legend((p1[0], p2[0],p3[0]), ('Agriculture', 'Industry' , 'Service'))  
+* It seems that the richest people are Western Europeans, followed by North Americans.  
   
-plt.show()  
+  
+<font size=4>8.Industrial distribution ratio</font>  
+  
+    plt.subplots(1,1,figsize=(10,10))  
+    ind = df2.index  
+    width=0.5  
+    p1 = plt.barh(ind, df2['Agriculture'] ,width)  
+    p2 = plt.barh(ind, df2['Industry'],width,left=df2['Agriculture'])  
+    p3 = plt.barh(ind, df2['Service'],width,left=df2['Industry'])  
+
+    plt.title('Scores by group and gender',pad=20,fontsize=25)  
+    plt.ylabel('Region',labelpad=30,fontsize=20)  
+    #plt.yticks(rotation=90)  
+    plt.legend((p1[0], p2[0],p3[0]), ('Agriculture', 'Industry' , 'Service'))  
+
+    plt.show()  
   
 ![6](https://github.com/chirring/Countries-of-the-world/blob/master/ResultPic/6Scores%20by%20group%20and%20genderpng.png)  
   
-#可耕面积和农作物比例  
-bar_width=0.3  
-N = len(df2)  
-index = np.arange(N)  
+We can see that  
+* Almost all countries or regions are mainly service industries.  
+* The proportion of agriculture in Asia, India and Australia is larger than in other countries or regions.  
+* The proportion of industry in North Africa and the Far East is relatively large.  
   
-fig, ax = plt.subplots(1,1,figsize=(10,5))  
-ax.bar(index -  bar_width/2, df2['Arable (%)'],bar_width)  
-ax.bar(index +  bar_width/2, df2['Crops (%)'],bar_width)  
-plt.title('Farming situation of the World',pad=30,fontsize=20)  
-plt.xlabel('Region',labelpad=30,fontsize=15)  
-plt.ylabel('Rate',labelpad=30,fontsize=15)  
-plt.xticks(np.arange(N),df2['Arable (%)'].index,rotation=90)  
-ax.legend(('Arable area ratio','Crop area ratio'))  
-plt.show()  
+  
+<font size=4>9.Farming situation of the World</font>  
+  
+    bar_width=0.3  
+    N = len(df2)  
+    index = np.arange(N)  
+
+    fig, ax = plt.subplots(1,1,figsize=(10,5))  
+    ax.bar(index -  bar_width/2, df2['Arable (%)'],bar_width)  
+    ax.bar(index +  bar_width/2, df2['Crops (%)'],bar_width)  
+    plt.title('Farming situation of the World',pad=30,fontsize=20)  
+    plt.xlabel('Region',labelpad=30,fontsize=15)  
+    plt.ylabel('Rate',labelpad=30,fontsize=15)  
+    plt.xticks(np.arange(N),df2['Arable (%)'].index,rotation=90)  
+    ax.legend(('Arable area ratio','Crop area ratio'))  
+    plt.show()  
   
 ![7](https://github.com/chirring/Countries-of-the-world/blob/master/ResultPic/7Farming%20situation%20of%20the%20World.png)  
+  
+  * It is worth noting that although the arable area in Europe is large, the area of crops is very small and the proportion is seriously inappropriate.  
+  
