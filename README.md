@@ -49,8 +49,8 @@
     import matplotlib.pyplot as plt  
 
     df=pd.read_csv('C:/Users/Administrator/Desktop/countries of the world.csv')  
-
-    #去除无用列，把数据的","替换为".",用平均值填充缺失数据  
+处理
+    #Remove the useless columns, replace the "," with ".", and fill the missing data with the average  
     df=df.drop(['Other (%)','Climate'],axis=1)  
 
     df['Region']=df['Region'].str.strip()  
