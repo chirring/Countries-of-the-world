@@ -14,6 +14,10 @@
 ### Part IV: Conclusion  
   
   
+  
+  
+  
+  
 ## Part I: Introduction to the dataset</font>  
 The data set contains 20 fields, including：  
 >Country  
@@ -40,6 +44,9 @@ The data set contains 20 fields, including：
   
   
   
+  
+  
+  
 ## Part II: Asking questions</font>  
 We want to know  
 * 1.The distribution of population, area, and population density  
@@ -49,6 +56,9 @@ We want to know
 * 5.Comparison of GDP per capita in each region  
 * 6.Comparison of arable area and crop area to total area  
 * 7.The composition ratio of agriculture, industry and service industry  
+  
+  
+  
   
   
 ## Part III: Solving the question</font>    
@@ -269,3 +279,12 @@ We can see that
   
 * It is worth noting that although the arable area in Europe is large, the area of crops is very small and the proportion is seriously inappropriate.  
   
+   
+   
+   
+   
+ ### Part IV: Conclusion  
+* East Asia has a large area and a large population density, but the economy is generally.
+* Although Europe is small in size and its population density is second only to East Asia, its per capita GDP is almost three times that of East Asia. It also faces the problem of population decline and massive influx of refugees.
+* Africa has a large area and a small population density. Agriculture still occupies a large proportion and the national economy is low.
+* North America has a small population density, but its economic level is quite developed, mainly relying on the development of service industries.
