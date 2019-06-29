@@ -1,4 +1,4 @@
-## Table of Contents</font>  
+## Table of Contents  
 * Part I: Introduction to the dataset  
 * Part II: Asking questions  
 * Part III: Solving the question  
@@ -18,7 +18,7 @@
   
   
   
-## Part I: Introduction to the dataset</font>  
+## Part I: Introduction to the dataset  
 The data set contains 20 fields, including：  
 >Country  
 >Region  
@@ -47,7 +47,7 @@ The data set contains 20 fields, including：
   
   
   
-## Part II: Asking questions</font>  
+## Part II: Asking questions  
 We want to know  
 * 1.The distribution of population, area, and population density  
 * 2.The relationship between population and area, and climate  
@@ -61,9 +61,9 @@ We want to know
   
   
   
-## Part III: Solving the question</font>    
+## Part III: Solving the question   
   
-### 1.  Overview of the data set</font>  
+### 1.  Overview of the data set   
   
     import numpy as np  
     import pandas as pd  
@@ -76,7 +76,7 @@ We want to know
 
     df=pd.read_csv('C:/Users/Administrator/Desktop/countries of the world.csv')  
 
-### 2.  Handling missing data  </font> 
+### 2.  Handling missing data  
     
     #Remove the useless columns  
     df=df.drop(['Other (%)','Climate'],axis=1)  
@@ -100,7 +100,7 @@ We want to know
   
   
 
-### 3.  Population and Area of Different Region of the world</font>
+### 3.  Population and Area of Different Region of the world  
   
     #Set some common parameters for drawing
     N = len(df1)  
@@ -149,7 +149,7 @@ We can see that
 * Although Asia is large, the population is less than South America.  
 * India, Latin America, and North America have a very small proportion of the population.  
   
-### 4.Population density of the world  </font>  
+### 4.Population density of the world  
   
     #Based on the above results, continue to study population density  
     plt.subplots(1,1,figsize=(10,5))  
@@ -163,7 +163,7 @@ We can see that
   
 * Asia has the highest population density, followed by Western Europe and the third is the Far East, which seems to be inconsistent with the above comparison of population and area.  
   
-### 5.  Population Composition of the World</font>  
+### 5.  Population Composition of the World    
 
     #Study the relationship between demographic composition, net population growth rate and mobility  
     df2['Net Growth Rate']=df2['Birthrate']-df2['Deathrate']  
