@@ -1,59 +1,59 @@
-<font size=5>Table of Contents</font>  
-&emsp;&emsp;Part I: Introduction to the dataset  
-&emsp;&emsp;Part II: Asking questions  
-&emsp;&emsp;Part III: Solving the question  
-&emsp;&emsp;&emsp;&emsp;1.Overview of the data set  
-&emsp;&emsp;&emsp;&emsp;2.Handling missing data  
-&emsp;&emsp;&emsp;&emsp;3.Population and Area of Different Region of the world  
-&emsp;&emsp;&emsp;&emsp;4.Population density of the world  
-&emsp;&emsp;&emsp;&emsp;5.Population Composition of the World  
-&emsp;&emsp;&emsp;&emsp;6.Population density distribution  
-&emsp;&emsp;&emsp;&emsp;7.Per capita GDP of the world  
-&emsp;&emsp;&emsp;&emsp;8.Industrial distribution ratio   
-&emsp;&emsp;&emsp;&emsp;9.Farming situation of the World  
-&emsp;&emsp;Part IV: Conclusion  
+## Table of Contents</font>  
+### Part I: Introduction to the dataset  
+### Part II: Asking questions  
+### Part III: Solving the question  
+### &emsp;&emsp;1.Overview of the data set  
+### &emsp;&emsp;2.Handling missing data  
+### &emsp;&emsp;3.Population and Area of Different Region of the world  
+### &emsp;&emsp;4.Population density of the world  
+### &emsp;&emsp;5.Population Composition of the World  
+### &emsp;&emsp;6.Population density distribution  
+### &emsp;&emsp;7.Per capita GDP of the world  
+### &emsp;&emsp;8.Industrial distribution ratio   
+### &emsp;&emsp;9.Farming situation of the World  
+### Part IV: Conclusion  
   
   
-<font size=4>Part I: Introduction to the dataset</font>  
+## Part I: Introduction to the dataset</font>  
 The data set contains 20 fields, including：  
-&emsp;&emsp;Country  
-&emsp;&emsp;Region  
-&emsp;&emsp;Population  
-&emsp;&emsp;Area (sq. mi.)：Square mile  
-&emsp;&emsp;Pop. Density (per sq. mi.)：Population density (per square mile)  
-&emsp;&emsp;Coastline (coast/area ratio)  
-&emsp;&emsp;Net migration  
-&emsp;&emsp;Infant mortality (per 1000 births)  
-&emsp;&emsp;GDP ($ per capita)  
-&emsp;&emsp;Literacy (%)：Reflecting the rate of education  
-&emsp;&emsp;Phones (per 1000)：the rate of having a mobile phone per 1,000 people  
-&emsp;&emsp;Arable (%)：Arable area accounts for the total area  
-&emsp;&emsp;Crops (%)：Crop area accounts for the total area  
-&emsp;&emsp;Other (%)：other area accounts for the total area  
-&emsp;&emsp;Climate：Climate comfort  
-&emsp;&emsp;Birthrate  
-&emsp;&emsp;Deathrate  
-&emsp;&emsp;Agriculture：The proportion of agriculture in the three major industries  
-&emsp;&emsp;Industry：The proportion of industry in the three major industries  
-&emsp;&emsp;Service：The proportion of service in the three major industries  
+>Country  
+>Region  
+>Population  
+>Area (sq. mi.)：Square mile  
+>Pop. Density (per sq. mi.)：Population density (per square mile)  
+>Coastline (coast/area ratio)  
+>Net migration  
+>Infant mortality (per 1000 births)  
+>GDP ($ per capita)  
+>Literacy (%)：Reflecting the rate of education  
+>Phones (per 1000)：the rate of having a mobile phone per 1,000 people  
+>Arable (%)：Arable area accounts for the total area  
+>Crops (%)：Crop area accounts for the total area  
+>Other (%)：other area accounts for the total area  
+>Climate：Climate comfort  
+>Birthrate  
+>Deathrate  
+>Agriculture：The proportion of agriculture in the three major industries  
+>Industry：The proportion of industry in the three major industries  
+>Service：The proportion of service in the three major industries  
   
   
   
   
-<font size=4>Part II: Asking questions</font>  
+## Part II: Asking questions</font>  
 We want to know  
-&emsp;&emsp;1.The distribution of population, area, and population density  
-&emsp;&emsp;2.The relationship between population and area, and climate  
-&emsp;&emsp;3.Comparison of population and birth rate, mortality rate, and mobility rate  
-&emsp;&emsp;4.Distribution of population density on the earth  
-&emsp;&emsp;5.Comparison of GDP per capita in each region  
-&emsp;&emsp;6.Comparison of arable area and crop area to total area  
-&emsp;&emsp;7.The composition ratio of agriculture, industry and service industry  
+* 1.The distribution of population, area, and population density  
+* 2.The relationship between population and area, and climate  
+* 3.Comparison of population and birth rate, mortality rate, and mobility rate  
+* 4.Distribution of population density on the earth  
+* 5.Comparison of GDP per capita in each region  
+* 6.Comparison of arable area and crop area to total area  
+* 7.The composition ratio of agriculture, industry and service industry  
   
   
-<font size=4>Part III: Solving the question</font>    
+## Part III: Solving the question</font>    
   
-<font size=4>1.  Overview of the data set</font>  
+### 1.  Overview of the data set</font>  
   
     import numpy as np  
     import pandas as pd  
@@ -66,7 +66,7 @@ We want to know
 
     df=pd.read_csv('C:/Users/Administrator/Desktop/countries of the world.csv')  
 
-<font size=4>2.  Handling missing data  </font> 
+### 2.  Handling missing data  </font> 
     
     #Remove the useless columns  
     df=df.drop(['Other (%)','Climate'],axis=1)  
@@ -90,7 +90,7 @@ We want to know
   
   
 
-<font size=4> 3.  Population and Area of Different Region of the world</font>
+### 3.  Population and Area of Different Region of the world</font>
   
     #Set some common parameters for drawing
     N = len(df1)  
@@ -139,7 +139,7 @@ We can see that
 * Although Asia is large, the population is less than South America.  
 * India, Latin America, and North America have a very small proportion of the population.  
   
-<font size=4>4.Population density of the world  </font>  
+### 4.Population density of the world  </font>  
   
     #Based on the above results, continue to study population density  
     plt.subplots(1,1,figsize=(10,5))  
@@ -153,7 +153,7 @@ We can see that
   
 * Asia has the highest population density, followed by Western Europe and the third is the Far East, which seems to be inconsistent with the above comparison of population and area.  
   
-<font size=4>5.  Population Composition of the World</font>  
+### 5.  Population Composition of the World</font>  
 
     #Study the relationship between demographic composition, net population growth rate and mobility  
     df2['Net Growth Rate']=df2['Birthrate']-df2['Deathrate']  
@@ -180,7 +180,7 @@ The results of this picture are thought-provoking
 * The development of Asia is relatively stable, with a considerable population born, and a small number of people moving in.   
   
   
-<font size=4>6.Population density distribution</font>   
+### 6.Population density distribution</font>   
 
     #Display population density on the map
     fig=plt.figure(figsize=(15,15))  
@@ -210,7 +210,7 @@ The results of this picture are thought-provoking
 
 ![4](https://github.com/chirring/Countries-of-the-world/blob/master/ResultPic/4Population%20density%20distribution.png)  
   
-<font size=4>7.  Per capita GDP of the world</font>  
+### 7.  Per capita GDP of the world</font>  
 
     plt.subplots(1,1,figsize=(10,5))  
     plt.bar(x=df2['GDP ($ per capita)'].index,height=df2['GDP ($ per capita)'],width = 0.5)  
@@ -225,7 +225,7 @@ The results of this picture are thought-provoking
 * It seems that the richest people are Western Europeans, followed by North Americans.  
   
   
-<font size=4>8.Industrial distribution ratio</font>  
+### 8.Industrial distribution ratio</font>  
   
     plt.subplots(1,1,figsize=(10,10))  
     ind = df2.index  
@@ -249,7 +249,7 @@ We can see that
 * The proportion of industry in North Africa and the Far East is relatively large.  
   
   
-<font size=4>9.Farming situation of the World</font>  
+### 9.Farming situation of the World</font>  
   
     bar_width=0.3  
     N = len(df2)  
