@@ -2,15 +2,15 @@
 * Part I: Introduction to the dataset  
 * Part II: Asking questions  
 * Part III: Solving the question  
-* &emsp;&emsp;1.Overview of the data set  
-* &emsp;&emsp;2.Handling missing data  
-* &emsp;&emsp;3.Population and Area of Different Region of the world  
-* &emsp;&emsp;4.Population density of the world  
-* &emsp;&emsp;5.Population Composition of the World  
-* &emsp;&emsp;6.Population density distribution  
-* &emsp;&emsp;7.Per capita GDP of the world  
-* &emsp;&emsp;8.Industrial distribution ratio   
-* &emsp;&emsp;9.Farming situation of the World  
+  &emsp;&emsp;1.Overview of the data set  
+  &emsp;&emsp;2.Handling missing data  
+  &emsp;&emsp;3.Population and Area of Different Region of the world  
+  &emsp;&emsp;4.Population density of the world  
+  &emsp;&emsp;5.Population Composition of the World  
+  &emsp;&emsp;6.Population density distribution  
+  &emsp;&emsp;7.Per capita GDP of the world  
+  &emsp;&emsp;8.Industrial distribution ratio   
+  &emsp;&emsp;9.Farming situation of the World  
 * Part IV: Conclusion  
   
   
