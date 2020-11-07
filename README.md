@@ -1,115 +1,67 @@
 ## Table of Contents 目录  
-* Part I: Introduction to the dataset  
-* Part II: Asking questions  
-* Part III: Solving the question  
-*  &emsp;&emsp;1.Overview of the data set  
-*  &emsp;&emsp;2.Handling missing data  
-*  &emsp;&emsp;3.Population and Area of Different Region of the world  
-*  &emsp;&emsp;4.Population density of the world  
-*  &emsp;&emsp;5.Population Composition of the World  
-*  &emsp;&emsp;6.Population density distribution  
-*  &emsp;&emsp;7.Per capita GDP of the world  
-*  &emsp;&emsp;8.Industrial distribution ratio   
-*  &emsp;&emsp;9.Farming situation of the World  
-* Part IV: Conclusion  
+* Part I: Introduction to the dataset介绍数据集  
+* Part II: Asking questions问题  
+* Part III: Solving the question解决问题  
+*  &emsp;&emsp;1.Overview of the data set数据集的概述  
+*  &emsp;&emsp;2.Handling missing data处理缺失数据  
+*  &emsp;&emsp;3.Population and Area of Different Region of the world世界不同地区的人口和面积  
+*  &emsp;&emsp;4.Population density of the world世界人口密度  
+*  &emsp;&emsp;5.Population Composition of the World世界人口组成  
+*  &emsp;&emsp;6.Population density distribution人口密度分布  
+*  &emsp;&emsp;7.Per capita GDP of the world世界人均GDP  
+*  &emsp;&emsp;8.Industrial distribution ratio工业分布比例   
+*  &emsp;&emsp;9.Farming situation of the World世界农业状况  
+* Part IV: Conclusion结论   
+  
+  
+  
+  
+  
+## Part I: Introduction to the dataset数据集简介
+The data set contains 20 fields, including数据集包含20个字段，包括：  
+>Country国家  
+>Region区域  
+>Population人口  
+>Area (sq. mi.)：Square mile面积(平方。mi):平方英里  
+>Pop. Density (per sq. mi.)：Population density (per square mile)流行。密度(每平方。密歇根州):人口密度(每平方英里)  
+>Coastline (coast/area ratio)海岸线(海岸/面积比)  
+>Net migration净移民  
+>Infant mortality (per 1000 births)婴儿死亡率(每1000个婴儿)  
+>GDP ($ per capita)国内生产总值(人均美元)  
+>Literacy (%)：Reflecting the rate of education识字率(%):反映受教育程度  
+>Phones (per 1000)：the rate of having a mobile phone per 1,000 people手机(每1000人):每1000人拥有手机的比率  
+>Arable (%)：Arable area accounts for the total area耕地(%):耕地面积占总面积  
+>Crops (%)：Crop area accounts for the total area作物(%):作物面积占总面积  
+>Other (%)：other area accounts for the total area其他(%):其他区域占总面积  
+>Climate：Climate comfort气候:气候舒适  
+>Birthrate出生率  
+>Deathrate死亡率  
+>Agriculture：The proportion of agriculture in the three major industries农业:农业在三大产业中的比重  
+>Industry：The proportion of industry in the three major industries工业:产业在三大产业中的比重  
+>Service：The proportion of service in the three major industries服务:服务在三大行业中的比重  
+  
+  
+  
+  
+  
+  
+## Part II: Asking questions问题  
+We want to know我们想知道  
+* 1.The distribution of population, area, and population density人口、面积和人口密度的分布  
+* 2.The relationship between population and area, and climate人口、面积和气候的关系  
+* 3.Comparison of population and birth rate, mortality rate, and mobility rate人口与出生率、死亡率和流动率的比较  
+* 4.Distribution of population density on the earth地球上人口密度的分布  
+* 5.Comparison of GDP per capita in each region各地区人均GDP的比较  
+* 6.Comparison of arable area and crop area to total area耕地面积和作物面积与总面积的比较  
+* 7.The composition ratio of agriculture, industry and service industry农业、工业和服务业的构成比例  
 
-* 第一部分:介绍数据集  
-* 第二部分:提问  
-* 第三部分:解决问题  
-* &emsp;&emsp;1.数据集的概述  
-* &emsp;&emsp;2.处理缺失数据  
-* &emsp;&emsp;3.世界不同地区的人口和面积  
-* &emsp;&emsp;4.世界人口密度  
-* &emsp;&emsp;5.世界人口组成  
-* &emsp;&emsp;6.人口密度分布  
-* &emsp;&emsp;7.世界人均GDP  
-* &emsp;&emsp;8.工业分布比例  
-* &emsp;&emsp;9.世界农业状况  
-* 第四部分:结论  
   
   
   
   
-  
-## Part I: Introduction to the dataset
-The data set contains 20 fields, including：  
->Country  
->Region  
->Population  
->Area (sq. mi.)：Square mile  
->Pop. Density (per sq. mi.)：Population density (per square mile)  
->Coastline (coast/area ratio)  
->Net migration  
->Infant mortality (per 1000 births)  
->GDP ($ per capita)  
->Literacy (%)：Reflecting the rate of education  
->Phones (per 1000)：the rate of having a mobile phone per 1,000 people  
->Arable (%)：Arable area accounts for the total area  
->Crops (%)：Crop area accounts for the total area  
->Other (%)：other area accounts for the total area  
->Climate：Climate comfort  
->Birthrate  
->Deathrate  
->Agriculture：The proportion of agriculture in the three major industries  
->Industry：The proportion of industry in the three major industries  
->Service：The proportion of service in the three major industries  
+## Part III: Solving the question解决问题     
 
-## 第一部分:数据集简介  
-数据集包含20个字段，包括:  
->国家  
->区域  
->人口  
->面积(平方。mi):平方英里  
->流行。密度(每平方。密歇根州):人口密度(每平方英里)  
->海岸线(海岸/面积比)  
->净移民  
->婴儿死亡率(每1000个婴儿)  
->国内生产总值(人均美元)  
->识字率(%):反映受教育程度  
->手机(每1000人):每1000人拥有手机的比率  
->耕地(%):耕地面积占总面积  
->作物(%):作物面积占总面积  
->其他(%):其他区域占总面积  
->气候:气候舒适  
->出生率  
->死亡率  
->农业:农业在三大产业中的比重  
->产业:产业在三大产业中的比重  
->服务:服务在三大行业中的比重  
-  
-  
-  
-  
-  
-  
-## Part II: Asking questions  
-We want to know  
-* 1.The distribution of population, area, and population density  
-* 2.The relationship between population and area, and climate  
-* 3.Comparison of population and birth rate, mortality rate, and mobility rate  
-* 4.Distribution of population density on the earth  
-* 5.Comparison of GDP per capita in each region  
-* 6.Comparison of arable area and crop area to total area  
-* 7.The composition ratio of agriculture, industry and service industry  
-
-## 第二部分:问问题  
-我们想知道  
-* 1.人口、面积和人口密度的分布  
-* 2.人口、面积和气候的关系  
-* 3.人口与出生率、死亡率和流动率的比较  
-* 4.地球上人口密度的分布  
-* 5.各地区人均GDP的比较  
-* 6.耕地面积和作物面积与总面积的比较  
-* 7.农业、工业和服务业的构成比例  
-  
-  
-  
-  
-## Part III: Solving the question   
-## 第三部分:解决问题  
-
-### 1.  Overview of the data set   
-### 1.  数据集的概述  
+### 1.  Overview of the data set数据集的概述     
 
     import numpy as np  
     import pandas as pd  
@@ -122,8 +74,7 @@ We want to know
 
     df=pd.read_csv('C:/Users/Administrator/Desktop/countries of the world.csv')  
 
-### 2.  Handling missing data  
-### 2.  处理缺失值   
+### 2.  Handling missing data处理缺失值     
 
     #Remove the useless columns  
     df=df.drop(['Other (%)','Climate'],axis=1)  
@@ -147,8 +98,7 @@ We want to know
   
   
 
-### 3.  Population and Area of Different Region of the world  
-### 3.  世界不同地区的人口和面积  
+### 3.  Population and Area of Different Region of the world世界不同地区的人口和面积  
   
     #Set some common parameters for drawing
     N = len(df1)  
@@ -202,8 +152,7 @@ We can see that
 * 虽然亚洲人口很多，但人口比南美洲少  
 * 印度、拉丁美洲和北美的人口比例非常小  
   
-### 4.Population density of the world  
-### 4.世界人口密度
+### 4.Population density of the world世界人口密度  
   
     #Based on the above results, continue to study population density  
     plt.subplots(1,1,figsize=(10,5))  
@@ -218,8 +167,7 @@ We can see that
 * Asia has the highest population density, followed by Western Europe and the third is the Far East, which seems to be inconsistent with the above comparison of population and area.  
 *  亚洲的人口密度最高，其次是西欧，第三是远东，这似乎与上述人口和面积的比较不一致  
   
-### 5.  Population Composition of the World    
-### 5.  世界人口组成    
+### 5.  Population Composition of the World世界人口组成    
 
     #Study the relationship between demographic composition, net population growth rate and mobility  
     df2['Net Growth Rate']=df2['Birthrate']-df2['Deathrate']  
@@ -252,8 +200,7 @@ The results of this picture are thought-provoking
 * 亚洲的发展相对稳定，有相当数量的人口出生，少量人口迁入。  
   
   
-### 6.Population density distribution</font>   
-### 6.人口密度分布</font>   
+### 6.Population density distribution</font>人口密度分布   
 
     #Display population density on the map
     fig=plt.figure(figsize=(15,15))  
@@ -283,8 +230,7 @@ The results of this picture are thought-provoking
 
 ![4](https://github.com/chirring/Countries-of-the-world/blob/master/ResultPic/4Population%20density%20distribution.png)  
   
-### 7.  Per capita GDP of the world</font>  
-### 7.  世界人均GDP</font>  
+### 7.  Per capita GDP of the world</font>世界人均GDP  
 
     plt.subplots(1,1,figsize=(10,5))  
     plt.bar(x=df2['GDP ($ per capita)'].index,height=df2['GDP ($ per capita)'],width = 0.5)  
@@ -300,8 +246,7 @@ The results of this picture are thought-provoking
 * 最富有的人似乎是西欧人，其次是北美人.  
   
   
-### 8.Industrial distribution ratio</font>  
-### 8.工业分布比例</font>  
+### 8.Industrial distribution ratio</font>工业分布比例  
   
     plt.subplots(1,1,figsize=(10,10))  
     ind = df2.index  
@@ -329,8 +274,7 @@ We can see that
 * 亚洲、印度和澳大利亚的农业比重比其他国家或地区都大。  
 * 北非和远东的工业比重比较大。  
   
-### 9.Farming situation of the World</font>  
-### 9.世界农业状况</font>  
+### 9.Farming situation of the World</font>世界农业状况  
   
     bar_width=0.3  
     N = len(df2)  
